@@ -1,0 +1,23 @@
+#             server = smtplib.SMTP('smtp.gmail.com', 587)
+
+ #            server.starttls()
+             #Next, log in to the server
+#             server.login("nibinshatest@gmail.com", "1234!@#$")
+
+             #Send the mail
+#             msg = post.title # The /n separates the message from the headers
+#             msg = msg.encode('ascii', 'ignore').decode('ascii')
+#             server.sendmail("nibinshatest@gmail.com", "nibinshanibi@gmail.com", msg)
+
+
+         ######################## dictionary ######################
+
+         dictionary = {}
+
+         dic_word = urllib2.urlopen("http://www.dictionary.com/browse/"+stri).read()
+         soup = bs.BeautifulSoup(dic_word,'lxml')
+
+         all_data = soup.body.find_all("p")
+         for para in all_data:
+              dic = para.text
+              dictionary[dic] = dic
